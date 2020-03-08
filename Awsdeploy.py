@@ -12,8 +12,8 @@ def deploy(id,num,type,key):
     MinCount = 1,
     MaxCount = num,
     InstanceType=type,
-    KeyName=key)
-    #GroupName='ssh'
+    KeyName=key,
+    SecurityGroups='ssh')
     print('New instanceID IS : ' + instance[0].id)
 
 
