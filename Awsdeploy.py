@@ -72,11 +72,13 @@ while True:
         print("Choose key...")
         deploy(input("Enter AMI id: "),int(input("Enter how many machines: ")),input("Enter type: "),input("Key type :"))
         quit=input("Do you want to quit? (y/n):")
-        if quit == "y":
+        if quit == "y" or quit == "yes":
             print("Bye Bye")
             break
-        elif quit =="n":
+        elif quit =="n" or quit =="no":
             continue
+        else:
+            print("Enter (yes/no) only !")
 
     elif choose == "2":
         show()
