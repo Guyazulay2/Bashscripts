@@ -52,7 +52,7 @@ def get_key():
     ec2 = boto3.client('ec2')
     response = ec2.describe_key_pairs()
     for i in response['KeyPairs']:
-        print("\nKey: " + i['KeyName'])
+        print("\nKey >>: " + i['KeyName'])
     return(response)
 
 
@@ -63,7 +63,7 @@ def get_key():
 
 while True:
     print("------------------------")
-    print("1.deploy machhin\n2.stop Instances\n3.start Instances\n4.reboot Instances\n5.terminate Instances\n6.Show instances\n7.Show keys\n8.Exit")
+    print("1.Deploy machhin\n2.Stop Instances\n3.Start Instances\n4.Reboot Instances\n5.Terminate Instances\n6.Show instances\n7.Show keys\n8.Regions\n9.Exit")
     print("------------------------")
     sleep(1)
     choose = input("Enter 1 - 6 Pls :")
@@ -104,8 +104,10 @@ while True:
     elif choose == "7":
         get_key()
 
-
-    elif choose == "8":
+    #elif choose == "8":
+        
+           
+    elif choose == "9":
         print("Bye Bye")
         break
 
