@@ -1,13 +1,13 @@
 #!/bin/bash
+################This script will connect to slave machine with sshpass and (1)change his host-name.(2)install packages,
+################auto enp0s3 sets enp0s8, PermitRootLogin with ssh
 
-#job2
-
-echo "<<Enter the ip >>:"
+echo "<<Enter the Slave ip >>:"
 read IP
 echo "<<Change host-name to slave, Enter the name >>:"
 read HOST
 echo $HOST > host.txt
-scp host.txt guy@193.168.1.2:/home/guy/Desktop/host.txt
+scp host.txt guy@193.168.1.2:/home/guy/Desktop/host.txt 
 
 sshpass -p 'rootroot' ssh root@$IP '\\
 cat /home/guy/Desktop/host.txt > /etc/hostname
@@ -39,3 +39,4 @@ iface enp0s8 inet dhcp
 		broadcast 193.168.1.255">/etc/network/interfaces
 echo "PermitRootLogin yes'>/etc/ssh/sshd_config
 reboot '
+####EOF###
