@@ -2,30 +2,30 @@
 
 #job2
 
-echo "Enter the ip :"
+echo "<<Enter the ip >>:"
 read IP
-echo "Change host-name to slave,Enter the name :"
+echo "<<Change host-name to slave, Enter the name >>:"
 read HOST
 echo $HOST > host.txt
 scp host.txt guy@193.168.1.2:/home/guy/Desktop/host.txt
 
 sshpass -p 'rootroot' ssh root@$IP '\\
 cat /home/guy/Desktop/host.txt > /etc/hostname
-echo "Installation.."
+echo "<< Installation >>"
 apt-get install net-tools -y
 apt-get install python3.7 -y
 apt-get install trace-route -y
 apt-get install sshpass -y
-echo "Make python3.7 default.."
+echo "<< Make python3.7 default >>"
 alias python=python3
-echo "Updating and upgrading.."
+echo "<< Updating and upgrading >>"
 sudo apt update
 sudo apt upgrade
-echo "install CURL.."
+echo "<< install CURL >>"
 sudo apt install curl
-echo "install java."
+echo "<< install java >>"
 apt install openjdk-8-jdk
-echo "install nmap.."
+echo "<< install nmap >>"
 apt-get install nmap
 echo 'auto lo
 iface lo inet loopback
