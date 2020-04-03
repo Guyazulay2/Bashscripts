@@ -1,6 +1,7 @@
-#!/bin/bash
+###################### Install jenkins and packages for jenkins 
 
-#job3
+
+#!/bin/bash
 
 echo "<< Updating now >>"
 sudo apt update
