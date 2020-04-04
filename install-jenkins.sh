@@ -43,7 +43,7 @@ sudo ufw allow 8080
 echo "<< install pip3 & boto3 & paramiko >>"
 sudo apt install python3-pip
 pip3 --version
-pip install boto3
+pip3 install boto3
 pip install paramiko
 
 echo "<< install Tcpdump >>"
