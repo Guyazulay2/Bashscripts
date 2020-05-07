@@ -91,7 +91,6 @@ fi
 }
 
 function Menu(){
-sudo apt-get install curl
 clear
 docker --version
 echo "----Docker Menu----:
