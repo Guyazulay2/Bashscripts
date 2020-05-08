@@ -131,10 +131,9 @@ elif [ $CHOICE == "7" ]
 then
 echo "Bye Bye"
 
-
-
 fi
-
 }
 
 Menu
+
+### EOF ###
