@@ -44,9 +44,9 @@ then
         docker --version ; sudo systemctl status docker
 elif [ $C == "2" ]
 then
-        echo "Enter The IP >>:"
+        echo "Enter Slave IP >>:"
         read IP
-        echo "Enter the Password >>:"
+        echo "Enter Root Password >>:"
         read PASS
         sshpass -p $PASS ssh root@$IP
         sudo apt-get update ; sudo apt-get install curl ; bash get - docker.sh
