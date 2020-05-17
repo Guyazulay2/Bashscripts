@@ -48,11 +48,12 @@ then
         read IP
         echo "Enter Root Password >>:"
         read PASS
-        sshpass -p $PASS ssh root@$IP
-        sudo apt-get update ; sudo apt-get install curl ; bash get - docker.sh
-        curl - fsSL https: // get.docker.com - o get - docker.sh
-        echo "<<< Docker Installation is Done >>>"
-        docker --version ; sudo systemctl status docker
+        sshpass -p $PASS ssh root@$IP '
+        sudo apt-get update \\
+	sudo apt-get install curl ; bash get - docker.sh -y \\
+        curl - fsSL https: // get.docker.com - o get - docker.sh -y \\
+        echo "<<< Docker Installation is Done >>>" \\
+        docker --version ; sudo systemctl status docker '
 fi
 }
 
