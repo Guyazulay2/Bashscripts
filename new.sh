@@ -62,7 +62,7 @@ then
 
 	echo "Create Details file >:"
 	touch details.txt
-
+	
 	echo "Enter your details :"
 	echo "Full Name :"
 	read NAME
@@ -77,8 +77,12 @@ then
 	echo "Age :"  $AGE >> details.txt
 	echo "Phone number :" $PHONE >> details.txt
 	echo "Adress :" $ADD >> details.txt
-
-
+	
+	echo "Enter the IP >:"
+	read IP
+	scp details.txt guy@$IP:/home/guy/Desktop/details.txt
+	
+	
 elif [ $choose == "6" ]
 then
 	echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
