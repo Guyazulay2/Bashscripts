@@ -8,7 +8,7 @@ echo "Menu >>>:
 (4)>> install Packages
      Enter 1 - 4 >>:"
 read CHOOSE
-#################################### Creates a folder and creates files in it and tgz them And sends the file to another machine ######
+                       ### Creates a folder and creates files in it and tgz them And sends the file to another machine ######
 if [ $CHOOSE == "1" ]; then
     echo "Enter the directory name >>:"
     read NAME
@@ -21,7 +21,7 @@ if [ $CHOOSE == "1" ]; then
     read IP
     scp $NAME.tgz guy@$IP:/home/guy/Desktop/$NAME.tgz
 
-################################### Shows all the necessary details of the machine ######
+                         ### Shows all the necessary details of the machine ######
 elif [ $CHOOSE == "2" ]; then
     touch details.txt
     echo "<<<< Ip address :>>>>" > details.txt
@@ -50,7 +50,7 @@ elif [ $CHOOSE == "2" ]; then
     echo "<< All the resources >>"
     cat details.txt
 
-###################################create ssh-keygen And exchanges the keys with him after that After that it changes His host name ######
+                         ###create ssh-keygen And exchanges the keys with him after that After that it changes His host name ######
 elif [ $CHOOSE == "3" ]; then
     echo"Create ssh-keygen.."
     ssh-keygen
