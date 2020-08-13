@@ -15,8 +15,7 @@ echo "<< Check the port that opens and enter the site >>"
 
 
 function Containers(){
-echo -e "(1) | Show all Containers Names/IP\n(2) | Enter container ID\nYour Choice >:"
-read F
+read -p echo -e "(1) | Show all Containers Names/IP\n(2) | Enter container ID\nYour Choice >:" F
 if [ $F == "1" ]
 then
         echo "All the ips and names of the containers that you have >>"
@@ -34,8 +33,7 @@ fi
 
 function Install(){
 echo "Install Docker"
-echo -e "(1) | Install docker on this computer\n(2) | Install docker on another computer\nYour Choice >>:"
-read C
+read echo -e "(1) | Install docker on this computer\n(2) | Install docker on another computer\nYour Choice >>:" C
 if [ $C == "1" ]
 then
         sudo apt-get update ; sudo apt-get install curl ; bash get - docker.sh
@@ -69,8 +67,7 @@ sudo docker images
 function Deploy(){
 echo -e "Those the images :\n-------------"
 sudo docker images
-echo -e "(1) | Create containers without ports\n(2) | Create containers with ports\n Your Choice >:"
-read CHOOSE
+read echo -e "(1) | Create containers without ports\n(2) | Create containers with ports\n Your Choice >:" CHOOSE
 if [ $CHOOSE == "1" ]
 then
 echo "Enter the image that you want to deploy >>:"
@@ -87,8 +84,7 @@ read H
 
 elif [ $CHOOSE == "2" ]
 then
-echo "Write the port and image name that you want, for example: 9000:9010 [Image_name] >>:"
-read P
+read echo "Write the port and image name that you want, for example: 9000:9010 [Image_name] >>:" P
 echo "How much Containers do you want? >:"
 read O
 
