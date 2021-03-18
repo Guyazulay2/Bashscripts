@@ -106,48 +106,43 @@ sudo docker ps -a
 }
 
 function Delete(){
-echo "<<< Those the containers >>> "
-sudo docker ps -a
-echo -e "(1) | Remove Container\n(2) | Remove all containers\n(3) | Remove Images\n(4) | Remove all Images\nYour choice >>:"
-read R
-if [ $R == "1" ]
-then
-	    echo "Enter the container id that you want to delete"
-	    read A
-	    sudo docker rm -f $A
-	    echo "Container :",$A ,"Deleted Successfully"
+	echo "<<< Those the containers >>> "
+	sudo docker ps -a
+	echo -e "(1) | Remove Container\n(2) | Remove all containers\n(3) | Remove Images\n(4) | Remove all Images\nYour choice >>:"
+	read R
+	if [ $R == "1" ]; then
+		echo "Enter the container id that you want to delete"
+	    	read A
+	    	sudo docker rm -f $A
+	    	echo "Container :",$A ,"Deleted Successfully"
 
-elif [ $R == "2" ]
-then
+	elif [ $R == "2" ]; then
 
-	    echo "Delete the containers..."
-	    sudo docker rm -f $(Docker ps -a -q)
+	    	echo "Delete the containers..."
+	    	sudo docker rm -f $(Docker ps -a -q)
 
-elif [ $R == "3" ]
-then
-	    sudo docker images
-	    echo "Enetr the Image (Name) or Image (id) to delete >>:"
-	    read IMAGE
-	    sudo docker rmi $IMAGE
-	    echo "Image >>:",$IMAGE ,"<<Deleted Successfully>>"
-	    sudo docker images
+	elif [ $R == "3" ]; then
+	    	sudo docker images
+	    	echo "Enetr the Image (Name) or Image (id) to delete >>:"
+	    	read IMAGE
+	    	sudo docker rmi $IMAGE
+	    	echo "Image >>:",$IMAGE ,"<<Deleted Successfully>>"
+	    	sudo docker images
 
-elif [ $R == "4" ]
-then
-        echo "Delete The Images .."
-        sudo docker rmi -f `docker images -a -q`
+	elif [ $R == "4" ]; then
+        	echo "Delete The Images .."
+        	sudo docker rmi -f `docker images -a -q`
 fi
 }
 
 function Nginx(){
-echo "Pulling nginx image and run 2 nginx containers with mount..."
-for i in {1..2}
-do
+	echo "Pulling nginx image and run 2 nginx containers with mount..."
+	for i in {1..2}
+	do
+   		sudo docker pull nginx ; sudo docker run -d -p 80 nginx
+   		sudo docker run -d -p 80 -v /home/guy/Desktop/web:/usr/share/nginx/html nginx
 
-   sudo docker pull nginx ; sudo docker run -d -p 80 nginx
-   sudo docker run -d -p 80 -v /home/guy/Desktop/web:/usr/share/nginx/html nginx
-
-done
+	done
 }
 
 function Menu(){
@@ -165,40 +160,31 @@ echo "----Docker Menu----:
 (9) | exit
 Your Choice >>:"
 read CHOICE
-if [ $CHOICE == "1" ]
-then
+if [ $CHOICE == "1" ]; then
 Install
 
-elif [ $CHOICE == "2" ]
-then
+elif [ $CHOICE == "2" ]; then
 Pullimages
 
-elif [ $CHOICE == "3" ]
-then
+elif [ $CHOICE == "3" ]; then
 Deploy
 
-elif [ $CHOICE == "4" ]
-then
+elif [ $CHOICE == "4" ]; then
 Show
 
-elif [ $CHOICE == "5" ]
-then
+elif [ $CHOICE == "5" ]; then
 Delete
 
-elif [ $CHOICE == "6" ]
-then
+elif [ $CHOICE == "6" ]; then
 Dockerui
 
-elif [ $CHOICE == "7" ]
-then
+elif [ $CHOICE == "7" ]; then
 Containers
 
-elif [ $CHOICE == "8" ]
-then
+elif [ $CHOICE == "8" ]; then
 Nginx
 
-elif [ $CHOICE == "9" ]
-then
+elif [ $CHOICE == "9" ]; then
 echo "Bye Bye"
 
 
