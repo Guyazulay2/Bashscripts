@@ -21,12 +21,12 @@ do
 
 done
 
-# Upload the 
+# Upload the output files to s3
 echo '-- Upload the output to the s3 --'
+
 sleep 1
 cd /home/ubuntu/demos
 sudo rm $1
-
 aws s3 cp /home/ubuntu/demos s3://demosvideos/output/ --recursive
 sleep 2
 sudo rm *mp4
