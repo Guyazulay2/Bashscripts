@@ -1,0 +1,16 @@
+## start script when systemis is starting
+
+## sudo nano ~/.config/autostart/bash.script
+
+
+
+[Desktop Entry]
+Type=Application
+Exec=/bin/bash /home/guy/run.sh
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_IL]=wiliotProj
+Name=wiliotProj
+Comment[en_IL]=running project on startup
+Comment=running project on startup
